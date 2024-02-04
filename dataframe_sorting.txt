@@ -1,0 +1,10 @@
+import pandas as pd
+data = {'Revenue': [274515,200734,182527],
+        'Employees': [147000,267937,135301],
+	'Country':['USA','South Korea','Taiwan']}
+index = ['Apple','Samsung','Foxconn']
+
+df = pd.DataFrame(data, index = index)
+df["Revenue per Employee"] = df["Revenue"] / df["Employees"]
+
+df.sort_values('Employees', ascending=False)
